@@ -1,0 +1,16 @@
+services:
+    web:
+        build:
+            context: .
+        container_name: react-router
+        hostname: react-router
+        environment:
+            TZ: ${TZ}
+            NODE_ENV: production
+        ports:
+            - 3000:3000
+        networks:
+            - react-network
+networks:
+    react-network:
+        external: true
